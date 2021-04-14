@@ -11,6 +11,7 @@
 using namespace std;
 
 constexpr auto dim=8192; // 2^13
+constexpr auto max=8192;
 
 // procedura per l'insertion sort
 void insSort(int *a, int n)
@@ -53,7 +54,6 @@ int partizione(int *a, int sx, int px, int dx) // dato un pivot, divide il sotto
 void quickSort(int *a, int sx, int dx) // procedura principale
 {
 	if(sx<dx) {
-		srand(time(NULL));
 		int px=rand() % (dx-sx+1) + sx; // scelgo il pivot in modo pseudorandom
 		int rk=partizione(a,sx,px,dx);
 		quickSort(a,sx,rk-1);
@@ -61,17 +61,17 @@ void quickSort(int *a, int sx, int dx) // procedura principale
 		}
 }
 
-int main() {
+int main()
+{
 	// alloca lo spazio per l'array
 	int *a=new int[dim];
 
-	// inizializza il seed per rand
+	// inizializza il seed per rand qui, per tutto il main
 	srand(time(NULL));
 
 	// crea un array di numeri pseudorandom
 	for (int i=0; i<dim; i++){
-		int r=rand() % (dim);
-		a[i]=r;
+		a[i]=rand() % max;
 	}
 
 	// Parsing delle "opzioni"
