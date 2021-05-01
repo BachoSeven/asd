@@ -11,7 +11,7 @@
 using namespace std;
 
 constexpr auto dim=8192; // 2^13
-constexpr auto max=8192;
+constexpr auto MAX=8192;
 
 // procedura per l'insertion sort
 void insSort(int *a, int n)
@@ -71,7 +71,7 @@ int main()
 
 	// crea un array di numeri pseudorandom
 	for (int i=0; i<dim; i++){
-		a[i]=rand() % max;
+		a[i]=rand() % MAX;
 	}
 
 	// Parsing delle "opzioni"
