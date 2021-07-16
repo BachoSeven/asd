@@ -15,7 +15,7 @@ int N,M;										// N <= MAXN numero di nodi, M = numero di archi
 
 /* lettura da input */
 
-void leggiGrafoOrientato()
+void leggiGrafo()
 {
 	freopen("input.txt", "r", stdin); // redireziona la lettura da stdin alla lettura di un file
 
@@ -30,7 +30,7 @@ void leggiGrafoOrientato()
 	// nota: grado(u) --> adj[u].size()
 }
 
-void leggiGrafo()
+void leggiGrafoOrientato()
 {
 	freopen("input_orientato.txt", "r", stdin); // redireziona la lettura da stdin alla lettura di un file
 
@@ -38,7 +38,7 @@ void leggiGrafo()
 
 	for(auto i=0;i<M;i++){ // M archi
 		int u,v;
-		cin >> u >> v; 			// arco uv non orientato
+		cin >> u >> v; 			// arco uv orientato
 		adj[u].push_back(v);// v è nella lista di u
 	}
 	// nota: grado(u) --> adj[u].size()
@@ -114,15 +114,17 @@ void DFS()
 			cc++;
 			cout << "- " << cc << "a componente connessa: "  <<  i  << endl;
 			DFSrec(i);
+			else
+				-> back // unica opzione se è non orientato
 		}
 }
 
 int main()
 {
 #ifdef ORIENTATO
-	leggiGrafo();
-#else
 	leggiGrafoOrientato();
+#else
+	leggiGrafo();
 #endif
 
 	stampaGrafo();

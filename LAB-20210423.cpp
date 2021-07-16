@@ -66,13 +66,19 @@ int main() {
 	}
 	sort(v.begin(),v.end());
 	int j=0;
-	for(int i =j+1; i<v.size();i++){
+	for(int i=j+1; i<v.size();i++){
 		if(v[i]!=v[j]){
 			j++;
 			v[j]=v[i];
 		}
 	}
-	v.erase(v.begin()+j+1, v.end()); // rimuove gli elementi vuoti
+	// 1 1 2 3 3 4
+	// 1 2 2 3 3 4
+	// 1 2 3 3 3 4
+	// 1 2 3 4(J) 3 3
+	// --> cancello gli ultimi 2 (begin+j+1,end)
+	// if v[1]!=v[0] -> i=2 -> v[1]=v[2] -> i=3(j=1) -> j=2 -> v[2]=v[3]
+	v.erase(v.begin()+j+1, v.end()); // rimuove gli elementi duplicati
 
 	// Creare il BST usando il fatto che il vettore è ordinato, allocando ogni volta la radice(=elemento centrale)
 	bT B=BST(v,0,v.size()-1);
