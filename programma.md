@@ -1,0 +1,9 @@
+- Capitolo 0 (versione elettronica)
+- Capitolo 1 (tranne par.1.3)
+- Capitolo 2 (tranne par.2.2)
+- Capitolo 3 (tranne par. 3.5)
+- Capitolo 4 (più cuckoo hashing)
+- Capitolo 5 (par.5.1, 5.2, 5.3)
+- Capitolo 6 (par. 6.1, 6.3, 6.4, 6.5, 6.8)
+- Capitolo 7 (tranne par. 7.3.2)
+- Capitolo 8 (tranne par. 8.7).
