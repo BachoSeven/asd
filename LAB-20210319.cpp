@@ -109,12 +109,12 @@ int main()
 		gettimeofday(&beg, NULL);
 		insSort(a,dim);
 		gettimeofday(&end, NULL);
-		cout << "Insertion Sort: " << "\n\t" << ((end.tv_sec - beg.tv_sec)*1000000 + end.tv_usec - beg.tv_usec) << "ms" << endl;
+		cout << "Insertion Sort: " << "\n\t" << ((end.tv_sec - beg.tv_sec)*1000000 + end.tv_usec - beg.tv_usec) << "us" << endl;
 
 		gettimeofday(&beg, NULL);
 		quickSort(b,0,dim-1);
 		gettimeofday(&end, NULL);
-		cout << "Quick Sort: " << "\n\t" << ((end.tv_sec - beg.tv_sec)*1000000 + end.tv_usec - beg.tv_usec) << "ms" << endl;
+		cout << "Quick Sort: " << "\n\t" << ((end.tv_sec - beg.tv_sec)*1000000 + end.tv_usec - beg.tv_usec) << "us" << endl;
 
 		delete[] b;
 	}

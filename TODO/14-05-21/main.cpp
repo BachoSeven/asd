@@ -127,7 +127,6 @@ void DFSric_mod( int u ){
    topologico[u] = contatore--;
 }
 
-// esercizio per casa: classificare i vari archi come: tree, forward, back, cross
 void DFS_mod( ){
   contatore = N-1;
   aciclico = true;
